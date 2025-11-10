@@ -1,6 +1,6 @@
 {% set name = "hatch-cpp" %}
 {% set version = "0.2.0" %}
-{% set python_min = "3.9" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -24,7 +24,8 @@ requirements:
   run:
     - python >={{ python_min }}
     - hatchling >=1.20
-    - pydantic >=2
+    - hatch-build >=0.4,<0.5
+    - pydantic
 
 test:
   requires:
