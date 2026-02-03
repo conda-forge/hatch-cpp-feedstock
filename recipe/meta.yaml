@@ -1,5 +1,5 @@
 {% set name = "hatch-cpp" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/h/hatch-cpp/hatch_cpp-{{ version }}.tar.gz
-  sha256: dea4a8727667f64972d9d4fce9dad1ff9495c0b1c87e486e482035d917bb5b29
+  sha256: b2178ca8110fb86b26cb3f64b78ff61ffdabf1aaf8fb8b18480a90e684f064b4
 
 build:
   number: 0
