@@ -1,0 +1,50 @@
+schema_version: 1
+
+context:
+  name: hatch-cpp
+  version: "0.5.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/hatch_cpp-${{ version }}.tar.gz
+  sha256: 2e14905363372d9b1800ede30c80ba875b3e86372edc9b362fc19b3fae096a72
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - hatchling >=1.20
+  run:
+    - python >=${{ python_min }}
+    - hatchling >=1.20
+    - hatch-build >=0.5,<0.6
+    - pydantic
+
+tests:
+  - python:
+      imports:
+        - hatch_cpp
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: Hatch plugin for C++ builds
+  description: Hatch plugin for C++ builds
+  homepage: https://github.com/python-project-templates/hatch-cpp
+  repository: https://github.com/python-project-templates/hatch-cpp
+
+extra:
+  recipe-maintainers:
+    - timkpaine
