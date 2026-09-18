@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: hatch-cpp
-  version: "0.5.1"
+  version: "0.5.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/hatch_cpp-${{ version }}.tar.gz
-  sha256: 6c56d03446dd2ccc32db76c2c313a27edac13c5019c40ca57a999161cb8dee5a
+  sha256: 25db8166be2ab64f3d8e87b34b6ce04db1729de74163bbb64ed483d3d9d02c70
 
 build:
   number: 0
